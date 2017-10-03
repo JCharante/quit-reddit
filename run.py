@@ -63,7 +63,7 @@ safe_subreddits = []
 for subreddit in reddit.user.moderator_subreddits():
 	safe_subreddits.append(subreddit.display_name)
 
-print(f"Will not deleted comments in: {safe_subreddits}")
+print(f"Will not overwrite comments in: {safe_subreddits}")
 
 for comment in reddit.user.me().comments.new(limit=None):
 	if comment.subreddit in safe_subreddits:
